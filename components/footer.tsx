@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Sparkles, ArrowRight, Twitter, Linkedin, Mail, Loader2 } from "lucide-react"
 import { Typewriter } from "@/components/typewriter"
 import { useModal } from "@/components/modal-provider"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 const footerLinks1 = [
   { href: "#features", label: "Features" },
@@ -30,6 +30,11 @@ export function Footer() {
   const [email, setEmail] = useState("")
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -51,11 +56,11 @@ export function Footer() {
             <div className="absolute -top-24 -right-24 size-64 bg-background/5 rounded-full blur-2xl" />
             <div className="absolute -bottom-24 -left-24 size-64 bg-background/5 rounded-full blur-2xl" />
           </div>
-          
+
           <div className="relative flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
             <div className="max-w-xl">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4">
-                <Typewriter 
+                <Typewriter
                   words={["Ready to Transform Your Courses?", "Ready to Revolutionize Learning?", "Ready to Empower Students?"]}
                   className="text-background"
                   typingSpeed={80}
@@ -64,24 +69,24 @@ export function Footer() {
                 />
               </h2>
               <p className="text-background/70 leading-relaxed">
-                Medhavy turns textbooks into AI-curated, conversational courses inside any 
-                LTI-compliant LMS—reducing faculty workload and giving students effortless 
+                B Wells turns textbooks into AI-curated, conversational courses inside any
+                LTI-compliant LMS—reducing faculty workload and giving students effortless
                 access to knowledge.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
-              <Button 
-                size="lg" 
-                variant="secondary" 
+              <Button
+                size="lg"
+                variant="secondary"
                 className="rounded-full px-6 group"
                 onClick={() => openModal("demo")}
               >
                 Request a Demo
                 <ArrowRight className="size-4 ml-2 transition-transform group-hover:translate-x-1" />
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="rounded-full px-6 bg-transparent border-background/30 text-background hover:bg-background/10 hover:text-background"
                 onClick={() => openModal("learn-more")}
               >
@@ -99,26 +104,26 @@ export function Footer() {
               <div className="size-8 rounded-lg bg-primary flex items-center justify-center">
                 <Sparkles className="size-4 text-primary-foreground" />
               </div>
-              <span className="text-xl font-bold tracking-tight">MEDHAVY</span>
+              <span className="text-xl font-bold tracking-tight">B WELLS</span>
             </Link>
             <p className="text-sm text-muted-foreground max-w-xs">
-              Built by educators, for educators. Led by Professor Sridhar Srinivas with 
+              Built by educators, for educators. Led by Professor Nik Brown with
               support from Humanitarians AI fellows.
             </p>
             <div className="flex gap-3 mt-2">
-              <button 
+              <button
                 onClick={() => openModal("contact")}
                 className="size-9 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Twitter className="size-4" />
               </button>
-              <button 
+              <button
                 onClick={() => openModal("contact")}
                 className="size-9 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Linkedin className="size-4" />
               </button>
-              <button 
+              <button
                 onClick={() => openModal("contact")}
                 className="size-9 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
@@ -171,7 +176,7 @@ export function Footer() {
             </p>
             {isSubscribed ? (
               <p className="text-sm text-green-600 font-medium">Thanks for subscribing!</p>
-            ) : (
+            ) : isMounted ? (
               <form className="flex gap-2" onSubmit={handleNewsletterSubmit}>
                 <input
                   type="email"
@@ -181,9 +186,9 @@ export function Footer() {
                   className="flex-1 px-4 py-2 rounded-full border bg-background text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
                   required
                 />
-                <Button 
-                  type="submit" 
-                  size="icon" 
+                <Button
+                  type="submit"
+                  size="icon"
                   className="rounded-full shrink-0"
                   disabled={isSubmitting}
                 >
@@ -194,6 +199,8 @@ export function Footer() {
                   )}
                 </Button>
               </form>
+            ) : (
+              <div className="h-10 w-full rounded-full border bg-muted/20 animate-pulse" />
             )}
           </div>
         </div>
@@ -201,7 +208,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="pt-8 border-t flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 - 2027 Medhavy. All rights reserved.
+            © 2026 - 2027 B Wells. All rights reserved.
           </p>
           <div className="flex gap-6">
             <button

@@ -3,11 +3,11 @@
 import React, { useEffect, useRef, useState } from "react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
-import { 
-  Shield, 
-  Hand, 
-  Globe, 
-  User, 
+import {
+  Shield,
+  Hand,
+  Globe,
+  User,
   ShieldCheck,
   BookOpen,
   Lightbulb,
@@ -80,7 +80,7 @@ function DonutChart({ isVisible }: { isVisible: boolean }) {
           const dashLength = (segment.percent / 100) * circumference * (progress / 100)
           const dashOffset = (cumulativePercent / 100) * circumference
           cumulativePercent += segment.percent
-          
+
           return (
             <circle
               key={index}
@@ -98,12 +98,12 @@ function DonutChart({ isVisible }: { isVisible: boolean }) {
           )
         })}
       </svg>
-      
+
       {/* Legend */}
       <div className="flex flex-wrap justify-center gap-4 mt-6">
         {segments.map((segment, index) => (
           <div key={index} className="flex items-center gap-2">
-            <div 
+            <div
               className="w-4 h-4 rounded-sm"
               style={{ backgroundColor: segment.color }}
             />
@@ -126,7 +126,7 @@ function TypewriterHeading({ text, className }: { text: string; className?: stri
 
   useEffect(() => {
     if (!isVisible) return
-    
+
     let index = 0
     const timer = setInterval(() => {
       if (index <= text.length) {
@@ -162,7 +162,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
-      
+
       {/* Etymology Hero Section */}
       <section className="relative py-24 md:py-32 overflow-hidden">
         {/* Background with blue gradient */}
@@ -170,34 +170,33 @@ export default function AboutPage() {
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100/50 rounded-full blur-3xl animate-pulse" />
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-sky-100/30 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-indigo-50/20 rounded-full blur-3xl" />
-        
-        <div 
+
+        <div
           ref={heroReveal.ref}
-          className={`container relative mx-auto px-4 md:px-6 text-center transition-all duration-1000 ${
-            heroReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
-          }`}
+          className={`container relative mx-auto px-4 md:px-6 text-center transition-all duration-1000 ${heroReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+            }`}
         >
           {/* Sanskrit text */}
           <p className="text-2xl md:text-3xl text-blue-600 font-medium mb-4" style={{ fontFamily: "serif" }}>
-            मेधावी
+            Looking Ahead
           </p>
-          
+
           {/* Main heading with elegant serif font */}
-          <h1 
+          <h1
             className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-8 text-foreground"
             style={{ fontFamily: "Georgia, serif", fontStyle: "italic" }}
           >
-            <TypewriterHeading text="Intellectually Brilliant" />
+            <TypewriterHeading text="B Wells" />
           </h1>
-          
+
           {/* Tagline */}
-          <p 
+          <p
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed italic"
             style={{ fontFamily: "Georgia, serif" }}
           >
-            &ldquo;Medhavy transforms how knowledge is shared, making elite education accessible to every corner of the globe.&rdquo;
+            &ldquo;B Wells transforms how knowledge is shared, making elite education accessible to every corner of the globe.&rdquo;
           </p>
-          
+
           {/* Sub-tag */}
           <p className="mt-8 text-sm text-muted-foreground">
             A Global Education Initiative led by <span className="font-semibold text-blue-600">Professor Sridhar Srinivas</span>
@@ -207,33 +206,32 @@ export default function AboutPage() {
 
       {/* The Narrative / Mission Section */}
       <section className="py-20 md:py-28">
-        <div 
+        <div
           ref={missionReveal.ref}
           className="container mx-auto px-4 md:px-6"
         >
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left: Text content */}
-            <div 
-              className={`transition-all duration-700 ${
-                missionReveal.isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
-              }`}
+            <div
+              className={`transition-all duration-700 ${missionReveal.isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-12"
+                }`}
             >
               <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-4">
                 Our Mission
               </p>
-              <h2 
+              <h2
                 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6 text-blue-900"
                 style={{ fontFamily: "Georgia, serif" }}
               >
                 Bridging the Gap
               </h2>
               <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                Medhavy transforms static textbooks into living, AI-powered courses inside Learning Management Systems like Canvas. We bridge the gap between traditional educational content and personalized learning by combining automation with instructor control.
+                B Wells transforms static textbooks into living, AI-powered courses inside Learning Management Systems like Canvas. We bridge the gap between traditional educational content and personalized learning by combining automation with instructor control.
               </p>
               <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 Led by <span className="font-semibold text-foreground">Professor Sridhar Srinivas</span> and supported by the fellows at <span className="font-semibold text-blue-600">Humanitarians AI</span>, we believe AI serves education&apos;s highest purpose when it democratizes learning.
               </p>
-              
+
               {/* Callout */}
               <div className="flex items-center gap-4 p-4 bg-blue-50/50 rounded-xl border border-blue-100 hover:bg-blue-50 hover:border-blue-200 transition-colors">
                 <div className="size-10 rounded-lg bg-blue-100 flex items-center justify-center">
@@ -244,12 +242,11 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            
+
             {/* Right: Donut Chart */}
-            <div 
-              className={`flex justify-center transition-all duration-700 delay-300 ${
-                missionReveal.isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
-              }`}
+            <div
+              className={`flex justify-center transition-all duration-700 delay-300 ${missionReveal.isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"
+                }`}
             >
               <div className="bg-card rounded-2xl border shadow-sm p-8 hover:shadow-xl hover:border-blue-200 transition-all">
                 <DonutChart isVisible={missionReveal.isVisible} />
@@ -261,27 +258,25 @@ export default function AboutPage() {
 
       {/* Leadership / Founders Section */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-blue-50/30 to-muted/30">
-        <div 
+        <div
           ref={teamReveal.ref}
           className="container mx-auto px-4 md:px-6"
         >
-          <div 
-            className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${
-              teamReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <div
+            className={`text-center max-w-2xl mx-auto mb-16 transition-all duration-700 ${teamReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <p className="text-muted-foreground text-lg">
-              AI is only as good as the humans who guide it. Meet the educators and technologists behind Medhavy.
+              AI is only as good as the humans who guide it. Meet the educators and technologists behind B Wells.
             </p>
           </div>
 
           {/* Bento Grid for Team */}
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {/* Professor Sridhar Srinivas */}
-            <div 
-              className={`bg-card rounded-2xl border p-8 shadow-sm hover:shadow-xl hover:scale-[1.02] hover:border-blue-200 transition-all duration-500 group cursor-pointer ${
-                teamReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+            <div
+              className={`bg-card rounded-2xl border p-8 shadow-sm hover:shadow-xl hover:scale-[1.02] hover:border-blue-200 transition-all duration-500 group cursor-pointer ${teamReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
               style={{ transitionDelay: "200ms" }}
             >
               <div className="flex items-start gap-6">
@@ -289,7 +284,7 @@ export default function AboutPage() {
                   <User className="size-10 text-blue-400 group-hover:text-blue-600 transition-colors" />
                 </div>
                 <div>
-                  <h3 
+                  <h3
                     className="text-xl font-bold mb-1 group-hover:text-blue-600 transition-colors"
                     style={{ fontFamily: "Georgia, serif" }}
                   >
@@ -297,17 +292,16 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-sm text-blue-600 font-medium mb-3">Founder & Visionary</p>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    A career educator dedicated to closing the accessibility gap in Higher Ed. Sridhar leads the pedagogical framework of Medhavy.
+                    A career educator dedicated to closing the accessibility gap in Higher Ed. Sridhar leads the pedagogical framework of B Wells.
                   </p>
                 </div>
               </div>
             </div>
 
             {/* Humanitarians AI */}
-            <div 
-              className={`bg-blue-900 text-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-500 group cursor-pointer ${
-                teamReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+            <div
+              className={`bg-blue-900 text-white rounded-2xl p-8 shadow-sm hover:shadow-xl hover:scale-[1.02] transition-all duration-500 group cursor-pointer ${teamReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
               style={{ transitionDelay: "400ms" }}
             >
               <div className="flex items-start gap-6">
@@ -315,7 +309,7 @@ export default function AboutPage() {
                   <ShieldCheck className="size-10 text-white/80" />
                 </div>
                 <div>
-                  <h3 
+                  <h3
                     className="text-xl font-bold mb-1"
                     style={{ fontFamily: "Georgia, serif" }}
                   >
@@ -323,7 +317,7 @@ export default function AboutPage() {
                   </h3>
                   <p className="text-sm text-blue-300 font-medium mb-3">Philanthropic Support</p>
                   <p className="text-sm text-white/70 leading-relaxed">
-                    A global collective of AI fellows ensuring Medhavy remains ethical, FERPA-compliant, and focused on social impact.
+                    A global collective of AI fellows ensuring B Wells remains ethical, FERPA-compliant, and focused on social impact.
                   </p>
                 </div>
               </div>
@@ -334,22 +328,21 @@ export default function AboutPage() {
 
       {/* Core Values Grid */}
       <section className="py-20 md:py-28">
-        <div 
+        <div
           ref={valuesReveal.ref}
           className="container mx-auto px-4 md:px-6"
         >
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {/* Integrity */}
-            <div 
-              className={`text-center transition-all duration-700 group ${
-                valuesReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+            <div
+              className={`text-center transition-all duration-700 group ${valuesReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
               style={{ transitionDelay: "100ms" }}
             >
               <div className="size-16 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-blue-100 group-hover:border-blue-200 transition-all cursor-pointer">
                 <Shield className="size-7 text-blue-600" />
               </div>
-              <h3 
+              <h3
                 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors"
                 style={{ fontFamily: "Georgia, serif" }}
               >
@@ -361,16 +354,15 @@ export default function AboutPage() {
             </div>
 
             {/* Control */}
-            <div 
-              className={`text-center transition-all duration-700 group ${
-                valuesReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+            <div
+              className={`text-center transition-all duration-700 group ${valuesReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
               style={{ transitionDelay: "200ms" }}
             >
               <div className="size-16 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-blue-100 group-hover:border-blue-200 transition-all cursor-pointer">
                 <Hand className="size-7 text-blue-600" />
               </div>
-              <h3 
+              <h3
                 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors"
                 style={{ fontFamily: "Georgia, serif" }}
               >
@@ -382,16 +374,15 @@ export default function AboutPage() {
             </div>
 
             {/* Democratization */}
-            <div 
-              className={`text-center transition-all duration-700 group ${
-                valuesReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
+            <div
+              className={`text-center transition-all duration-700 group ${valuesReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+                }`}
               style={{ transitionDelay: "300ms" }}
             >
               <div className="size-16 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mx-auto mb-6 group-hover:scale-110 group-hover:bg-blue-100 group-hover:border-blue-200 transition-all cursor-pointer">
                 <Globe className="size-7 text-blue-600" />
               </div>
-              <h3 
+              <h3
                 className="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors"
                 style={{ fontFamily: "Georgia, serif" }}
               >
@@ -407,14 +398,13 @@ export default function AboutPage() {
 
       {/* Scientific Roots Section */}
       <section className="py-20 md:py-28 bg-gradient-to-b from-blue-50/30 to-background">
-        <div 
+        <div
           ref={scienceReveal.ref}
           className="container mx-auto px-4 md:px-6"
         >
-          <div 
-            className={`max-w-4xl mx-auto transition-all duration-700 ${
-              scienceReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <div
+            className={`max-w-4xl mx-auto transition-all duration-700 ${scienceReveal.isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <div className="bg-card rounded-2xl border shadow-sm p-8 md:p-12 hover:shadow-xl hover:border-blue-200 transition-all">
               <div className="flex items-start gap-6">
@@ -425,19 +415,19 @@ export default function AboutPage() {
                   <p className="text-sm font-semibold uppercase tracking-wider text-blue-600 mb-2">
                     Scientific Foundation
                   </p>
-                  <h3 
+                  <h3
                     className="text-2xl md:text-3xl font-bold mb-4 text-blue-900"
                     style={{ fontFamily: "Georgia, serif" }}
                   >
                     Rooted in Learning Science
                   </h3>
                   <p className="text-muted-foreground leading-relaxed mb-6">
-                    Medhavy&apos;s AI isn&apos;t just intelligent—it&apos;s pedagogically grounded. Our system leverages 
-                    <span className="font-semibold text-blue-600"> Vygotsky&apos;s Zone of Proximal Development (ZPD)</span> and 
-                    <span className="font-semibold text-blue-600"> Scaffolded Learning</span> principles to ensure every interaction 
+                    B Wells&apos;s AI isn&apos;t just intelligent—it&apos;s pedagogically grounded. Our system leverages
+                    <span className="font-semibold text-blue-600"> Vygotsky&apos;s Zone of Proximal Development (ZPD)</span> and
+                    <span className="font-semibold text-blue-600"> Scaffolded Learning</span> principles to ensure every interaction
                     meets students exactly where they are, providing just-in-time support that builds genuine understanding.
                   </p>
-                  
+
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div className="flex items-start gap-3 p-4 bg-blue-50/50 rounded-xl border border-blue-100/50 hover:bg-blue-50 hover:border-blue-200 transition-colors">
                       <Lightbulb className="size-5 text-blue-600 shrink-0 mt-0.5" />
@@ -465,26 +455,26 @@ export default function AboutPage() {
       <section className="py-20 md:py-28">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 
+            <h2
               className="text-3xl md:text-4xl font-bold mb-6 text-blue-900"
               style={{ fontFamily: "Georgia, serif" }}
             >
               Ready to Transform Your Teaching?
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              Join the growing community of educators using Medhavy to create intelligent, personalized learning experiences.
+              Join the growing community of educators using B Wells to create intelligent, personalized learning experiences.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="group bg-blue-600 hover:bg-blue-700"
                 onClick={() => openModal("demo")}
               >
                 Request a Demo
                 <ArrowRight className="ml-2 size-4 group-hover:translate-x-1 transition-transform" />
               </Button>
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 variant="outline"
                 className="border-blue-200 hover:bg-blue-50 hover:border-blue-300 bg-transparent"
                 onClick={() => openModal("contact")}

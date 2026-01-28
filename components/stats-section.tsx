@@ -170,7 +170,7 @@ export function StatsSection() {
                     Traditional Prep
                   </span>
                   <span className="text-sm text-blue-600 font-medium text-center w-20 md:w-28">
-                    Medhavy Prep
+                    B Wells Prep
                   </span>
                 </div>
               </div>

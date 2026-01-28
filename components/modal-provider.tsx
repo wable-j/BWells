@@ -16,10 +16,10 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { CheckCircle2, Sparkles, Mail, BookOpen, Users, MessageSquare, ArrowRight, Loader2 } from "lucide-react"
 
-type ModalType = 
-  | "demo" 
-  | "contact" 
-  | "learn-more" 
+type ModalType =
+  | "demo"
+  | "contact"
+  | "learn-more"
   | "get-started"
   | "newsletter"
   | "explore-ai"
@@ -79,7 +79,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
   }> = {
     demo: {
       title: "Request a Demo",
-      description: "See how Medhavy can transform your educational content into intelligent, conversational courses.",
+      description: "See how B Wells can transform your educational content into intelligent, conversational courses.",
       icon: Sparkles,
       fields: [
         { name: "name", label: "Full Name", type: "text", placeholder: "John Doe", required: true },
@@ -105,7 +105,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
       successMessage: "Message sent! We'll get back to you within 1-2 business days.",
     },
     "learn-more": {
-      title: "Learn More About Medhavy",
+      title: "Learn More About B Wells",
       description: "Get detailed information about our AI-powered educational platform sent directly to your inbox.",
       icon: BookOpen,
       fields: [
@@ -114,10 +114,10 @@ export function ModalProvider({ children }: ModalProviderProps) {
         { name: "interest", label: "What interests you most?", type: "text", placeholder: "AI co-instruction, course creation, etc." },
       ],
       submitText: "Get Information",
-      successMessage: "Check your inbox! We've sent you detailed information about Medhavy.",
+      successMessage: "Check your inbox! We've sent you detailed information about B Wells.",
     },
     "get-started": {
-      title: "Get Started with Medhavy",
+      title: "Get Started with B Wells",
       description: "Create your account and start transforming your educational content today.",
       icon: Users,
       fields: [
@@ -127,7 +127,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
         { name: "courses", label: "How many courses do you manage?", type: "text", placeholder: "1-5, 6-20, 20+..." },
       ],
       submitText: "Create Account",
-      successMessage: "Welcome to Medhavy! Check your email for next steps to set up your account.",
+      successMessage: "Welcome to B Wells! Check your email for next steps to set up your account.",
     },
     newsletter: {
       title: "Stay Updated",
@@ -155,7 +155,7 @@ export function ModalProvider({ children }: ModalProviderProps) {
     },
     "course-creation": {
       title: "Effortless Course Creation",
-      description: "See how Medhavy can help you build LMS modules, generate assessments, and create lecture materials in hours, not weeks.",
+      description: "See how B Wells can help you build LMS modules, generate assessments, and create lecture materials in hours, not weeks.",
       icon: BookOpen,
       fields: [
         { name: "name", label: "Full Name", type: "text", placeholder: "John Doe", required: true },
@@ -164,11 +164,11 @@ export function ModalProvider({ children }: ModalProviderProps) {
         { name: "courses", label: "How many courses do you need to create/update?", type: "text", placeholder: "1-5, 6-10, 10+..." },
       ],
       submitText: "Learn About Course Creation",
-      successMessage: "Check your email for a detailed guide on effortless course creation with Medhavy!",
+      successMessage: "Check your email for a detailed guide on effortless course creation with B Wells!",
     },
     "platform-integration": {
       title: "Platform Integration",
-      description: "Discover how Medhavy unifies textbooks, PDFs, videos, and existing LMS content into one cohesive experience.",
+      description: "Discover how B Wells unifies textbooks, PDFs, videos, and existing LMS content into one cohesive experience.",
       icon: MessageSquare,
       fields: [
         { name: "name", label: "Full Name", type: "text", placeholder: "John Doe", required: true },
@@ -241,8 +241,8 @@ export function ModalProvider({ children }: ModalProviderProps) {
                     )}
                   </div>
                 ))}
-                <Button 
-                  type="submit" 
+                <Button
+                  type="submit"
                   className="w-full rounded-full mt-2 group"
                   disabled={isSubmitting}
                 >

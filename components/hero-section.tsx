@@ -55,16 +55,15 @@ export function HeroSection() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
           {/* Content */}
-          <div 
-            className={`flex flex-col gap-6 transition-all duration-1000 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <div
+            className={`flex flex-col gap-6 transition-all duration-1000 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <div className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground bg-muted/80 px-4 py-2 rounded-full w-fit">
               <Sparkles className="size-4" />
               AI-Powered Education Platform
             </div>
-            
+
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
               <span className="block text-balance">Transform Static</span>
               <span className="block text-balance">Textbooks Into</span>
@@ -79,29 +78,25 @@ export function HeroSection() {
               </span>
               <span className="block text-balance">Courses</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
-              Medhavy turns any textbook into a personalized, AI-curated conversational 
+              B Wells turns any textbook into a personalized, AI-curated conversational
               learning experience inside any LTI-compliant LMS.
             </p>
-            
-            <p className="text-sm text-muted-foreground border-l-2 border-primary/30 pl-4">
-              <span className="font-medium text-foreground">Sanskrit meaning:</span>{" "}
-              <span className="italic">मेधावी (Maydhavee)</span> means {'"intellectually brilliant"'}
-              —the perfect name for our AI-powered intelligent textbook system.
-            </p>
-            
+
+
+
             <div className="flex flex-wrap gap-4 mt-4">
-              <Button 
-                size="lg" 
+              <Button
+                size="lg"
                 className="rounded-full px-8 h-12 text-base shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 transition-all"
                 onClick={() => openModal("demo")}
               >
                 Request a Demo
               </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
+              <Button
+                size="lg"
+                variant="outline"
                 className="rounded-full px-8 h-12 text-base bg-transparent hover:bg-muted transition-all"
                 onClick={() => openModal("learn-more")}
               >
@@ -111,10 +106,9 @@ export function HeroSection() {
           </div>
 
           {/* Carousel */}
-          <div 
-            className={`relative transition-all duration-1000 delay-300 ${
-              isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-            }`}
+          <div
+            className={`relative transition-all duration-1000 delay-300 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
           >
             <div className="relative aspect-[4/3] rounded-2xl bg-gradient-to-br from-muted to-muted/50 border shadow-2xl overflow-hidden">
               {/* Pagination dots */}
@@ -123,11 +117,10 @@ export function HeroSection() {
                   <button
                     key={index}
                     onClick={() => setCurrentSlide(index)}
-                    className={`size-2.5 rounded-full transition-all duration-300 ${
-                      currentSlide === index 
-                        ? "bg-foreground w-8" 
+                    className={`size-2.5 rounded-full transition-all duration-300 ${currentSlide === index
+                        ? "bg-foreground w-8"
                         : "bg-foreground/30 hover:bg-foreground/50"
-                    }`}
+                      }`}
                     aria-label={`Go to slide ${index + 1}`}
                   />
                 ))}

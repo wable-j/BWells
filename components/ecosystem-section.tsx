@@ -52,41 +52,39 @@ export function EcosystemSection() {
   return (
     <section ref={sectionRef} id="ecosystem" className="py-20 md:py-28 bg-muted/30">
       <div className="container mx-auto px-4 md:px-6">
-        <div 
-          className={`text-center mb-16 md:mb-20 transition-all duration-700 ${
-            isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-          }`}
+        <div
+          className={`text-center mb-16 md:mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+            }`}
         >
           <div className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground bg-background px-4 py-2 rounded-full mb-6 border">
             Ecosystem
           </div>
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl mb-4">
             {showTypewriter ? (
-              <TypewriterText 
-                text="The Medhavy Ecosystem" 
+              <TypewriterText
+                text="The B Wells Ecosystem"
                 speed={50}
               />
             ) : (
-              <span className="opacity-0">The Medhavy Ecosystem</span>
+              <span className="opacity-0">The B Wells Ecosystem</span>
             )}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Building Better Education Through Collaboration
           </p>
           <p className="text-muted-foreground mt-2">
-            Medhavy connects three essential partners
+            B Wells connects three essential partners
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-3 lg:gap-10">
           {partners.map((partner, index) => (
-            <Card 
-              key={partner.title} 
-              className={`group border-0 shadow-none bg-transparent transition-all duration-700 ${
-                isVisible 
-                  ? "opacity-100 translate-y-0" 
+            <Card
+              key={partner.title}
+              className={`group border-0 shadow-none bg-transparent transition-all duration-700 ${isVisible
+                  ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-8"
-              }`}
+                }`}
               style={{ transitionDelay: `${(index + 1) * 150}ms` }}
             >
               <CardContent className="p-0 flex flex-col gap-5">
@@ -99,7 +97,7 @@ export function EcosystemSection() {
                   {/* Gradient overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/60 to-transparent" />
                 </div>
-                
+
                 <div>
                   <h3 className="font-bold text-xl mb-3 flex items-center gap-2">
                     <partner.icon className="size-5 text-primary" />
