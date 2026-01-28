@@ -1,30 +1,35 @@
-# Medhavy website build
+# B Wells
 
-*Automatically synced with your [v0.app](https://v0.app) deployments*
+**Transform Static Textbooks Into Intelligent Courses**
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/jugal-wables-projects/v0-medhavy)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.app-black?style=for-the-badge)](https://v0.app/chat/i1EUk8LZyMD)
+B Wells turns any textbook into a personalized, AI-curated conversational learning experience inside any LTI-compliant LMS. Built by educators, for educators.
 
-## Overview
+## **Stack**
 
-This repository will stay in sync with your deployed chats on [v0.app](https://v0.app).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.app](https://v0.app).
+*   **Framework**: [Next.js](https://nextjs.org/)
+*   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+*   **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+*   **Icons**: [Lucide React](https://lucide.dev/)
 
-## Deployment
+## **Getting Started**
 
-Your project is live at:
+First, run the development server:
 
-**[https://vercel.com/jugal-wables-projects/v0-medhavy](https://vercel.com/jugal-wables-projects/v0-medhavy)**
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Build your app
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Continue building your app on:
+## **Project Structure**
 
-**[https://v0.app/chat/i1EUk8LZyMD](https://v0.app/chat/i1EUk8LZyMD)**
-
-## How It Works
-
-1. Create and modify your project using [v0.app](https://v0.app)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+*   `app/`: Application routing and pages
+*   `components/`: Reusable UI components
+*   `lib/`: Utility functions
+*   `public/`: Static assets
