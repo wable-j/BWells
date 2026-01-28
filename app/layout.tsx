@@ -1,7 +1,7 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
+
 import { ModalProvider } from '@/components/modal-provider'
 import './globals.css'
 
@@ -11,7 +11,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: 'B Wells - Transform Static Textbooks Into Intelligent Courses',
   description: 'B Wells turns any textbook into a personalized, AI-curated conversational learning experience inside any LTI-compliant LMS. Built by educators, for educators.',
-  generator: 'v0.app',
+
   icons: {
     icon: [
       {
@@ -42,7 +42,7 @@ export default function RootLayout({
         <ModalProvider>
           {children}
         </ModalProvider>
-        <Analytics />
+
       </body>
     </html>
   )
